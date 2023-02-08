@@ -21,15 +21,20 @@ def main():
             "json","all_caps"])
     args = parser.parse_args()
     
-    if args.llm == "ChatGPT" and not ChatGPT.verify_context(args.context):
-        logging.error(
-            "Your context string for ChatGPT is wrong."
-        )
-        exit(1)
-    
+    if args.llm == "ChatGPT":
+        if not ChatGPT.verify_context(args.context):
+            logging.error("Your context string for ChatGPT is wrong.")
+            exit(1)
+        if not args.data_source in Utils.get_data_sources()
+                 logging.error(
+                "Your context string for ChatGPT is wrong."
+            )
+            exit(1)
 #     qr_code = QRCode(name=args.name, birth=args.birth, vaccine=[Vaccination(args.manufacturer[i], args.date[i]) for i in range(len(args.date))])
 #     generate_qr_code(qr_code)
-
+def throw_error(error_text):
+                logging.error("Your context string for ChatGPT is wrong.")
+            exit(1)
 if __name__ == "__main__":
     try:
         main()
