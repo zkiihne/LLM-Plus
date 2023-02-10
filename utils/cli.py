@@ -37,5 +37,5 @@ def throw_error(error_text):
 if __name__ == "__main__":
     try:
         main()
-    except exception as e:
+    except Exception as e:
         logging.error(e)
