@@ -25,6 +25,9 @@ class Util(object):
     query += "\n" + self.user_input
     return query
   
+  def get_data_source(self, data_source):
+    return "None available"
+  
   def send_query(self):
     query = self.construct_query()
     if (self.context is not None):
