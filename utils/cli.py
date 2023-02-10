@@ -18,7 +18,7 @@ llms = ["ChatGPT"]
 
 def main():
     parser = argparse.ArgumentParser(description="Generate your LLM query.")
-    parser.add_argument("-LLM", "--LLM", type=str, help="The LLM model you want to use", required=True, choices=llms)
+    parser.add_argument("-l", "--llm", type=str, help="The LLM model you want to use", required=True, choices=llms)
     parser.add_argument("-c", "--context", type=str, help="The context you want to use in string:string format", required=False)
     parser.add_argument("-d", "--data_source", type=str, help="The datasources you want to include", required=False, choices=data_sources)
     parser.add_argument("-r", "--response_format", type=str, help="Any special formatting you want in the response", required=False, choices=response_formats)
