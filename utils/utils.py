@@ -14,7 +14,8 @@ class Util(object):
     
   def preview(self):
     print("Using LLM: " + self.llm)
-    print("With context: " + self.context)
+    if self.context != None:
+      print("With context: " + self.context)
     print(construct_query())
     
   def construct_query(self):
