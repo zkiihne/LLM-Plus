@@ -24,9 +24,10 @@ def main():
     parser.add_argument("-r", "--response_format", type=str, help="Any special formatting you want in the response", required=False, choices=response_formats)
     args = parser.parse_args()
     
-    if args.llm == "ChatGPT":
-        if not ChatGPT.verify_context(args.context):
-            throw_error("Your context string for ChatGPT is wrong.")
+# uncomment after ChatGPT is running
+#     if args.llm == "ChatGPT":
+#         if not ChatGPT.verify_context(args.context):
+#             throw_error("Your context string for ChatGPT is wrong.")
     
     util = util(llm=args.llm, context=args.context, data_source=args.data_source, response_format=args.response_format)
     util.preview()
