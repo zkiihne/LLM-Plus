@@ -14,13 +14,14 @@ class Util(object):
     
   def preview(self):
     print("Using LLM: " + self.llm)
-    if self.context != None:
+    if self.context is not None:
       print("With context: " + self.context)
     print(self.construct_query())
     
   def construct_query(self):
     # constructs the query to be sent
-    query = self.intro
+    query = ""
+    query += "\n" + self.intro
     query += "\n" + self.get_data_sources()
     query += "\n" + self.response_format
     query += "\n" + self.user_input
