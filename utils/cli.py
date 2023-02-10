@@ -32,8 +32,9 @@ def main():
     util.preview()
     
 def throw_error(error_text):
-    logging.error(error_text)
+    print(error_text)
     exit(1)
+    
 if __name__ == "__main__":
     try:
         main()
