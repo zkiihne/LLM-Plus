@@ -37,7 +37,5 @@ def throw_error(error_text):
 if __name__ == "__main__":
     try:
         main()
-    except ValidationException as e:
+    except exception as e:
         logging.error(e)
-    except Exception as e:
-        logging.exception(e)
