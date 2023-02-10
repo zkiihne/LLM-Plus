@@ -10,7 +10,7 @@
 
 # a preview will be shown, then you will be asked to input your prompt text
 
-import sys
+import argparse
 
 data_sources = ["pokimon","todo-list"]
 response_formats =["json","all_caps"]
