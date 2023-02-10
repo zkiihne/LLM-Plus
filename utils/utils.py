@@ -25,7 +25,7 @@ class utils(object):
     query += "\n" + self.user_input
     return query
   
-  def send_query(self)
+  def send_query(self):
     query = self.construct_query()
     if (self.context is not None):
       self.llm.add_context(self.context)
