@@ -11,6 +11,7 @@
 # a preview will be shown, then you will be asked to input your prompt text
 
 import argparse
+import utils
 
 data_sources = ["pokimon","todo-list"]
 response_formats =["json","all_caps"]
@@ -29,8 +30,8 @@ def main():
 #         if not ChatGPT.verify_context(args.context):
 #             throw_error("Your context string for ChatGPT is wrong.")
     
-    util = util(llm=args.llm, context=args.context, data_source=args.data_source, response_format=args.response_format)
-    util.preview()
+    utils = utils(llm=args.llm, context=args.context, data_source=args.data_source, response_format=args.response_format)
+    utils.preview()
     
 def throw_error(error_text):
     print(error_text)
