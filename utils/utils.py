@@ -16,17 +16,17 @@ class Util(object):
     print("Using LLM: " + self.llm)
     if self.context != None:
       print("With context: " + self.context)
-    print(construct_query())
+    print(self.construct_query())
     
   def construct_query(self):
     # constructs the query to be sent
     query = self.intro
-    query += "\n" + self.get_data_source(data_source)
+    query += "\n" + self.get_data_sources()
     query += "\n" + self.response_format
     query += "\n" + self.user_input
     return query
   
-  def get_data_source(self, data_source):
+  def get_data_sources(self):
     return "None available"
   
   def send_query(self):
