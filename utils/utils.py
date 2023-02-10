@@ -1,4 +1,4 @@
-class utils(object):
+class Util(object):
   
   def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None):
     self.llm = llm
