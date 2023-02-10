@@ -29,8 +29,10 @@ def main():
 #     if args.llm == "ChatGPT":
 #         if not ChatGPT.verify_context(args.context):
 #             throw_error("Your context string for ChatGPT is wrong.")
-    
-    llm_util = Util(llm=args.llm, context=args.context, data_source=args.data_source, response_format=args.response_format)
+    response_format = args.response_format if args.response_format is not None else ""
+    data_source = args.data_source if args.data_source is not None else ""
+
+    llm_util = Util(llm=args.llm, context=args.context, data_source=data_source, response_format=response_format)
     llm_util.preview()
     
 def throw_error(error_text):
