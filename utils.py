@@ -35,8 +35,8 @@ class Util(object):
     query += "\n" + self.add_file()
     query += "\n" + self.get_data_sources()
     query += "\n" + self.response_format
-    query += "\n" + self.user_input
     query += "\n" + self.outro
+    query += "\n" + self.user_input
     return query
   
   def get_data_sources(self):
