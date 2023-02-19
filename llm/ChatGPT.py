@@ -57,12 +57,12 @@ class ChatGPTModel(object):
             middle = (not first and not last)
             prompt = ""
 
-            if first:
-                prompt += self.first_request_prompt
-            elif middle:
-                prompt += self.middle_request_prompt
-            elif last:
-                prompt += self.last_request_prompt
+#             if first:
+#                 prompt += self.first_request_prompt
+#             elif middle:
+#                 prompt += self.middle_request_prompt
+#             elif last:
+#                 prompt += self.last_request_prompt
 
             prompt += text_chunks[i]
             try:
