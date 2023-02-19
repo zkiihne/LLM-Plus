@@ -5,8 +5,6 @@ class Davinci003Model(object):
     ongoing_conversation = False
     name = "Davinci003"
     model_name = "text-davinci-003"
-
-    def __init__(self):
         
     def safe_to_send(self, prompt)
         if len(prompt) > 8000:
