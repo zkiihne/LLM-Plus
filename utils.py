@@ -44,7 +44,7 @@ class Util(object):
     return query
   
   def get_data_sources(self):
-    return false, ""
+    return False, ""
   
   def send_query(self):
     query = self.construct_query()
@@ -55,9 +55,9 @@ class Util(object):
   
   def add_file(self):
     if self.file_name is None:
-      return false, ""
+      return False, ""
     try:
       file_contents = open(self.file_name, 'r').read()
     except:
-      return false, ""
-    return true, file_contents
+      return False, ""
+    return True, file_contents
