@@ -23,6 +23,7 @@ def main():
     parser.add_argument("-c", "--context", type=str, help="The context you want to use in string:string format", required=False)
     parser.add_argument("-d", "--data_source", type=str, help="The datasources you want to include", required=False, choices=data_sources)
     parser.add_argument("-r", "--response_format", type=str, help="Any special formatting you want in the response", required=False, choices=response_formats)
+    parser.add_argument("-f", "--file", type=str, help="The file to load input from", required=False)
     args = parser.parse_args()
     
 # uncomment after ChatGPT is running
@@ -32,7 +33,7 @@ def main():
     response_format = args.response_format if args.response_format is not None else ""
     data_source = args.data_source if args.data_source is not None else ""
 
-    llm_util = Util(llm=args.llm, context=args.context, data_source=data_source, response_format=response_format)
+    llm_util = Util(llm=args.llm, context=args.context, data_source=data_source, response_format=response_format, file=args.file)
     llm_util.preview()
     user_input = input("Input your prompt for the LLM here:")
     llm_util.set_user_input(user_input)
