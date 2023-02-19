@@ -34,6 +34,9 @@ def main():
 
     llm_util = Util(llm=args.llm, context=args.context, data_source=data_source, response_format=response_format)
     llm_util.preview()
+    user_input = input("Input your prompt for the LLM here:")
+    llm_util.set_user_input(user_input)
+    llm_util.send_query()
     
 def throw_error(error_text):
     print(error_text)
