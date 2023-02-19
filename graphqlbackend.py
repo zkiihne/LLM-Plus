@@ -1,4 +1,5 @@
 from graphene import ObjectType, String, Boolean, ID, Field, Int,List , Float
+from utils import Util
 
 class Query(ObjectType):
     query = List(user_input=String(), model=String(), context=String())
