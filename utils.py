@@ -2,7 +2,7 @@ from llm.ChatGPT import ChatGPTModel
 
 class Util(object):
   
-  def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None, file_name=""m user_input="[user input here]"):
+  def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None, file_name="", user_input="[user input here]"):
     if llm == "ChatGPT":
         self.llm = ChatGPTModel()
     if llm == "Davinci003":
