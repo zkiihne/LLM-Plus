@@ -36,7 +36,7 @@ class Util(object):
   
   def send_query(self):
     query = self.construct_query()
-    if (self.context is not None):
-      self.llm.add_context(self.context)
+#     if (self.context is not None):
+#       self.llm.add_context(self.context)
     response = self.llm.ask(query)
     return response
