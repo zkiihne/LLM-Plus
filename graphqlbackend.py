@@ -7,9 +7,9 @@ class Response(ObjectType):
     model = String()
     
 class Query(ObjectType):
-    query = List(Response, user_input=String(), model=String(), context=String())
+    ask_model = List(Response, dummy=String(), user_input=String(), model=String(), context=String())
     
-    def resolve_query(self, dummy, model, context, user_input):
+    def resolve_ask_model(self, dummy, model, context, user_input):
         llm_util = Util(llm=model, context=context, user_input=user_input)
         response = llm_util.send_query()
         return_dict = {}
