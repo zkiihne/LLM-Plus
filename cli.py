@@ -15,7 +15,7 @@ from utils import Util
 
 data_sources = ["pokimon","todo-list"]
 response_formats =["json","all_caps"]
-llms = ["ChatGPT"]
+llms = ["ChatGPT", "Davinci002"]
 
 def main():
     parser = argparse.ArgumentParser(description="Generate your LLM query.")
