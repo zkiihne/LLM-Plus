@@ -13,4 +13,6 @@ application.config['CORS_HEADERS'] = 'Content-Type'
 application.add_url_rule('/graphql', view_func=view_func)
 
 if __name__ == '__main__':
+    from gevent import monkey
+    monkey.patch_all()
     application.run(host='0.0.0.0')
