@@ -36,7 +36,9 @@ def main():
     llm_util.preview()
     user_input = input("Input your prompt for the LLM here:")
     llm_util.set_user_input(user_input)
-    llm_util.send_query()
+    print("Input received")
+    response = llm_util.send_query()
+    print(response)
     
 def throw_error(error_text):
     print(error_text)
