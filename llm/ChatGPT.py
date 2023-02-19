@@ -1,7 +1,7 @@
 from chatgpt_wrapper import ChatGPT
 from transformers import GPT2Tokenizer
 
-class ChatGPT(object):
+class ChatGPTModel(object):
     # gpt2 and gpt3 use the same tokenizer
     tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
     ongoing_conversation = False
