@@ -6,7 +6,7 @@ class Davinci003Model(object):
     name = "Davinci003"
     model_name = "text-davinci-003"
         
-    def safe_to_send(self, prompt)
+    def safe_to_send(self, prompt):
         if len(prompt) > 8000:
             return False    
         return True
