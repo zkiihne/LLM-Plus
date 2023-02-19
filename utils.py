@@ -9,6 +9,7 @@ class Util(object):
     self.response_format = response_format
     self.data_source = data_source
     self.context = context
+    self.file_name = file_name
     
     self.intro = "I am going to send you a prompt. It might be long and broken into several parts. Please wait to respond until you see the phrase LLM_PLUS OUT"
     self.outro = "LLM_PLUS OUT"
@@ -29,7 +30,7 @@ class Util(object):
     # constructs the query to be sent
     query = ""
     query += "\n" + self.intro
-    query += "\n" + self.file_name
+    query += "\n" + self.add_file()
     query += "\n" + self.get_data_sources()
     query += "\n" + self.response_format
     query += "\n" + self.user_input
@@ -45,3 +46,7 @@ class Util(object):
       self.llm.add_context(self.context)
     response = self.llm.ask(query)
     return response
+  
+  def add_file(self):
+    # read file
+    return "file_contents_here"
