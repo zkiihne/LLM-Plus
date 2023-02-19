@@ -32,15 +32,19 @@ class Util(object):
     # constructs the query to be sent
     query = ""
     query += "\n" + self.intro
-    query += "\n" + self.add_file()
-    query += "\n" + self.get_data_sources()
+    file_available, file_contents = self.add_file()
+    if file_available:
+      query += "\n" + file_contents
+    data_source_available, data_sources = self.get_data_sources()
+    if data_source_available:
+      query += "\n" + data_sources
     query += "\n" + self.response_format
     query += "\n" + self.outro
     query += "\n" + self.user_input
     return query
   
   def get_data_sources(self):
-    return "None available"
+    return false, ""
   
   def send_query(self):
     query = self.construct_query()
@@ -51,5 +55,9 @@ class Util(object):
   
   def add_file(self):
     if self.file_name is None:
-      return "No file added"
-    return open(self.file_name, 'r').read()
+      return false, ""
+    try:
+      file_contents = open(self.file_name, 'r').read()
+    except:
+      return false, ""
+    return true, file_contents
