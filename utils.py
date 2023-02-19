@@ -50,7 +50,7 @@ class Util(object):
   
   def send_query(self):
     query = self.construct_query()
-    if self.context is not None:
+    if self.context is not None and self.context != "":
       self.llm.add_context(self.context)
     response = self.llm.safe_ask(query)
     return response
