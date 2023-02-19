@@ -6,6 +6,7 @@ class ChatGPT(object):
     tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
     ongoing_conversation = False
     chatGPTBot = ChatGPT()
+    name = "ChatGPT"
 
     first_request_prompt = "I am going to give you the following document in passages. Do not respond with anything more than ok until the final passage. Here is the first passage: "
     middle_request_prompt = "Here is the next passage: "
@@ -25,7 +26,7 @@ class ChatGPT(object):
     def get_context(self):
         return self.chatGPTBot.parent_message_id + ":" + self.chatGPTBot.conversation_id
 
-    def load_context(self, context_id):
+    def add_context(self, context_id):
         try:
             (conversation_id, parent_message_id) = context_id.split(":")
             assert conversation_id == "None" or len(conversation_id) == 36
