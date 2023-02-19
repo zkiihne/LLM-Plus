@@ -28,7 +28,7 @@ class Davinci003Model(object):
         # vanilla ask
         response = openai.Completion.create(
           engine=self.model_name,
-          prompt=self.prompt,
+          prompt=prompt,
           temperature=0.75,
           max_tokens=2048,
           top_p=1.0,
