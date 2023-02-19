@@ -39,7 +39,7 @@ class ChatGPTModel(object):
         self.chatGPTBot.parent_message_id = parent_message_id
         self.chatGPTBot.conversation_id = conversation_id
 
-    def send_large_document_to_chatGPT(self, prompt, reset_conversation=False, context=None):
+    def safe_ask(self, prompt, reset_conversation=False, context=None):
         # reset conversation if needed
         if reset_conversation or not self.ongoing_conversation:
             self.clear_conversation()
