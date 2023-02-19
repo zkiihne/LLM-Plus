@@ -1,7 +1,9 @@
 class Util(object):
   
   def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None):
-    self.llm = llm
+    match llm:
+      case "ChatGPT":
+        self.llm = ChatGPT()
     self.response_format = response_format
     self.data_source = data_source
     self.context = context
@@ -13,7 +15,7 @@ class Util(object):
     self.user_input = user_input
     
   def preview(self):
-    print("Using LLM: " + self.llm)
+    print("Using LLM: " + self.llm.name)
     if self.context is not None:
       print("With context: " + self.context)
     print(self.construct_query())
