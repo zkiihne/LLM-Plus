@@ -44,7 +44,7 @@ class Util(object):
     query = self.construct_query()
     if self.context is not None:
       self.llm.add_context(self.context)
-    response = self.llm.ask(query)
+    response = self.llm.safe_ask(query)
     return response
   
   def add_file(self):
