@@ -40,8 +40,7 @@ class Davinci003Model(object):
           prompt=prompt,
           temperature=0.75,
           max_tokens=2048,
-          top_p=1.0,
-          frequency_penalty=0.0,
-          presence_penalty=0.0
+          n=1,
+          stop=None
         )
         return response['choices'][0]['text']
