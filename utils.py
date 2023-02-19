@@ -23,8 +23,10 @@ class Util(object):
     if self.context is not None:
       print("With context: " + self.context)
     query = self.construct_query()
-    if len(query) < 1000:
+    if len(query) <= 1000:
       print(query)
+    else:
+      print(query[0:1000]
     
   def construct_query(self):
     # constructs the query to be sent
