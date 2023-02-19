@@ -48,5 +48,4 @@ class Util(object):
     return response
   
   def add_file(self):
-    # read file
-    return "file_contents_here"
+    return open(self.file_name, 'r').read()
