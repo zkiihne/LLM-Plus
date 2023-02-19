@@ -1,10 +1,10 @@
-from ChatGPT import ChatGPT
+from ChatGPT import ChatGPTModel
 
 class Util(object):
   
   def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None):
     if llm == "ChatGPT":
-        self.llm = ChatGPT()
+        self.llm = ChatGPTModel()
         
     self.response_format = response_format
     self.data_source = data_source
