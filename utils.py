@@ -26,7 +26,7 @@ class Util(object):
     if len(query) <= 1000:
       print(query)
     else:
-      print(query[0:1000]
+      print(query[0:1000])
     
   def construct_query(self):
     # constructs the query to be sent
@@ -50,6 +50,6 @@ class Util(object):
     return response
   
   def add_file(self):
-    if self.file_name is not None:
+    if self.file_name is None:
       return "No file added"
     return open(self.file_name, 'r').read()
