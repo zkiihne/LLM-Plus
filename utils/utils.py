@@ -1,9 +1,9 @@
 class Util(object):
   
   def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None):
-    match llm:
-      case "ChatGPT":
+    if llm = "ChatGPT":
         self.llm = ChatGPT()
+        
     self.response_format = response_format
     self.data_source = data_source
     self.context = context
