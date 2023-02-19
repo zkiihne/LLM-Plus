@@ -5,7 +5,10 @@ class Davinci003Model(object):
     ongoing_conversation = False
     name = "Davinci003"
     model_name = "text-davinci-003"
-        
+    def get_key():
+        with open('key.json', mode='r') as key_file:
+            key = json.loads(key_file.read())['key']
+        return key
     def safe_to_send(self, prompt):
         if len(prompt) > 8000:
             return False    
@@ -26,6 +29,7 @@ class Davinci003Model(object):
 
     def ask(self, prompt):
         # vanilla ask
+        openai.api_key = get_key()
         response = openai.Completion.create(
           engine=self.model_name,
           prompt=prompt,
