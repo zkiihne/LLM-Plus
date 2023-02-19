@@ -5,7 +5,7 @@ class Util(object):
   def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None, file_name=""):
     if llm == "ChatGPT":
         self.llm = ChatGPTModel()
-    if llm == "Davinci002":
+    if llm == "Davinci003":
         self.llm = ChatGPTModel()
         
     self.response_format = response_format
