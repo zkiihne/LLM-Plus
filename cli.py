@@ -43,7 +43,9 @@ def throw_error(error_text):
     exit(1)
     
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(e)
+    while True:
+        try:
+            main()
+        except Exception as e:
+            print(e)
+        
