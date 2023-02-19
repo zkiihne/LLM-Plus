@@ -2,7 +2,7 @@ from llm.ChatGPT import ChatGPTModel
 
 class Util(object):
   
-  def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None):
+  def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None, file_name=""):
     if llm == "ChatGPT":
         self.llm = ChatGPTModel()
         
@@ -10,7 +10,8 @@ class Util(object):
     self.data_source = data_source
     self.context = context
     
-    self.intro = "This is an intro"
+    self.intro = "I am going to send you a prompt. It might be long and broken into several parts. Please wait to respond until you see the phrase LLM_PLUS OUT"
+    self.outro = "LLM_PLUS OUT"
     self.user_input = "[ user input here ]"
     
   def set_user_input(self, user_input):
@@ -20,15 +21,19 @@ class Util(object):
     print("Using LLM: " + self.llm.name)
     if self.context is not None:
       print("With context: " + self.context)
-    print(self.construct_query())
+    query = self.construct_query()
+    if len(query) < 1000:
+      print(query)
     
   def construct_query(self):
     # constructs the query to be sent
     query = ""
     query += "\n" + self.intro
+    query += "\n" + self.file_name
     query += "\n" + self.get_data_sources()
     query += "\n" + self.response_format
     query += "\n" + self.user_input
+    query += "\n" + self.outro
     return query
   
   def get_data_sources(self):
