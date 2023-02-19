@@ -2,7 +2,7 @@ from llm.ChatGPT import ChatGPTModel
 
 class Util(object):
   
-  def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None, file_name=""):
+  def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None, file_name=""m user_input="[user input here]"):
     if llm == "ChatGPT":
         self.llm = ChatGPTModel()
     if llm == "Davinci003":
@@ -15,7 +15,7 @@ class Util(object):
     
     self.intro = "I am going to send you a prompt. It might be long and broken into several parts. Please wait to respond until you see the phrase LLM_PLUS OUT"
     self.outro = "LLM_PLUS OUT"
-    self.user_input = "[ user input here ]"
+    self.user_input = user_input
     
   def set_user_input(self, user_input):
     self.user_input = user_input
