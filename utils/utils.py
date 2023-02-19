@@ -1,7 +1,7 @@
 class Util(object):
   
   def __init__(self, llm="ChatGPT", response_format="", data_source="", context=None):
-    if llm = "ChatGPT":
+    if llm == "ChatGPT":
         self.llm = ChatGPT()
         
     self.response_format = response_format
