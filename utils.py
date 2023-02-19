@@ -50,4 +50,6 @@ class Util(object):
     return response
   
   def add_file(self):
+    if self.file_name is not None:
+      return "No file added"
     return open(self.file_name, 'r').read()
