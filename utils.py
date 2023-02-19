@@ -1,4 +1,5 @@
 from llm.ChatGPT import ChatGPTModel
+from llm.Davinci003 import Davinci003Model
 
 class Util(object):
   
@@ -6,7 +7,7 @@ class Util(object):
     if llm == "ChatGPT":
         self.llm = ChatGPTModel()
     if llm == "Davinci003":
-        self.llm = ChatGPTModel()
+        self.llm = Davinci003Model()
         
     self.response_format = response_format
     self.data_source = data_source
