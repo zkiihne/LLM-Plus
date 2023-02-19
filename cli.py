@@ -33,7 +33,7 @@ def main():
     response_format = args.response_format if args.response_format is not None else ""
     data_source = args.data_source if args.data_source is not None else ""
 
-    llm_util = Util(llm=args.llm, context=args.context, data_source=data_source, response_format=response_format, file=args.file)
+    llm_util = Util(llm=args.llm, context=args.context, data_source=data_source, response_format=response_format, file_name=args.file)
     llm_util.preview()
     user_input = input("Input your prompt for the LLM here:")
     llm_util.set_user_input(user_input)
