@@ -1,4 +1,4 @@
-from ChatGPT import ChatGPTModel
+from .llm.ChatGPT import ChatGPTModel
 
 class Util(object):
   
