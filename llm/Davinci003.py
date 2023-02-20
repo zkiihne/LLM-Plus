@@ -36,12 +36,13 @@ class Davinci003Model(object):
         if self.api_key is None:
             self.get_key()
             openai.api_key = self.api_key
-        response = openai.Completion.create(
-          engine=self.model_name,
-          prompt=prompt,
-          temperature=0.75,
-          max_tokens=2048,
-          n=1,
-          stop=None
-        )
-        return response['choices'][0]['text']
+            response = openai.Completion.create(
+              engine=self.model_name,
+              prompt=prompt,
+              temperature=0.75,
+              max_tokens=2048,
+              n=1,
+              stop=None
+            )
+            print(response)
+            return response['choices'][0]['text']
