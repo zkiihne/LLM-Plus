@@ -2,7 +2,7 @@ from graphene import ObjectType, String, Boolean, ID, Field, Int,List , Float
 from utils import Util
 
 class Response(ObjectType):
-    query = String()
+    user_input = String()
     response = String()
     model = String()
     
@@ -14,6 +14,6 @@ class Query(ObjectType):
         response = llm_util.send_query()
         return_dict = {}
         return_dict.update({"response":response})
-        return_dict.update({"query":query})
+        return_dict.update({"user_input":user_input})
         return_dict.update({"model":model})
         return [return_dict]
