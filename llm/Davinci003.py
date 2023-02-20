@@ -29,6 +29,7 @@ class Davinci003Model(object):
         if not self.safe_to_send(prompt):
             return "Prompt is not fit for this model"
         result = self.ask(prompt)
+        return result
 
     def ask(self, prompt):
         # vanilla ask
